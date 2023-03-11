@@ -6,6 +6,7 @@
 \sisetup{group-separator={,}}
 \usepackage{array}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{longtable}
 
 \title{Analysis of Seismic and Tsunami Loads Effects on 10-Story Reinforced Concrete Building based on SNI 1727:2020 with Tsunami Height Variations}
 
@@ -60,18 +61,21 @@ Load case 3 represents the loading due to the maximum inundation depth, $h_{max}
 
 Load case 1 assumes the inundation height which produces the greatest buoyancy forces together with the hydrodynamic forces which have velocity corresponding to the inundation height. The summary of load cases in tsunami loading according to ASCE 7-16 and SNI 1727:2020 can be found in table \ref{tab:tsunami load cases}. The inflow and outflow height of inundation and the corresponding velocity is also illustrated in figure \ref{fig:loadcases}.
 
-\begin{table}[H]
-\renewcommand{\arraystretch}{1.5}
-\caption{Summary of tsunami load cases according to ASCE 7-16 and SNI 1727:2020. Source: \cite{leet}.}
+%\begin{table}[H]
+%\renewcommand{\arraystretch}{1.5}
 \label{tab:tsunami load cases}
-\centering
-\begin{tabular}{P{1in} P{1in} P{1in} P{1.5in}}
+%\centering
+
+\begin{longtable}{P{1in} P{1in} P{1in} P{1.5in}}
+\caption{Summary of tsunami load cases according to ASCE 7-16 and SNI 1727:2020. Source: \cite{leet}.}\\
+
 \headrow \thead{Load Case} & \thead{h\textsubscript{des}} & \thead{u\textsubscript{des}} & \thead{Load implication} \\
 1& $h$ which causes maximum buoyancy forces     & $u$ which coressponds to $h$ & Maximum uplift forces \\
 2& $\frac{2}{3}h_{max}$     & $u_{max}$       & Maximum hydrodynamic loads         \\
 3     & $h_{max}$      &   $\frac{1}{3}u_{max}$            & Maximum numbers of structural elements to be loaded  \\
-\end{tabular}
-\end{table}  
+
+\end{longtable}
+%\end{table}  
 
 \begin{figure}[H]
 \centering
