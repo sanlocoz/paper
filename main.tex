@@ -61,14 +61,15 @@ Load case 3 represents the loading due to the maximum inundation depth, $h_{max}
 Load case 1 assumes the inundation height which produces the greatest buoyancy forces together with the hydrodynamic forces which have velocity corresponding to the inundation height. The summary of load cases in tsunami loading according to ASCE 7-16 and SNI 1727:2020 can be found in table \ref{tab:tsunami load cases}. The inflow and outflow height of inundation and the corresponding velocity is also illustrated in figure \ref{fig:loadcases}.
 
 \begin{table}[H]
+\renewcommand{\arraystretch}{1.5}
 \caption{Summary of tsunami load cases according to ASCE 7-16 and SNI 1727:2020. Source: \cite{leet}.}
 \label{tab:tsunami load cases}
 \centering
 \begin{tabular}{P{1in} P{1in} P{1in} P{1.5in}}
 \headrow \thead{Load Case} & \thead{h\textsubscript{des}} & \thead{u\textsubscript{des}} & \thead{Load implication} \\
-$h$ which causes maximum buoyancy forces     & $h$ which causes maximum buoyancy forces & Spirit of America          & GE J47  \\
-$\frac{2}{3}h_{max}$     & Tom Green       & Wingfoot Express           & WE J46  \\
-434.22      & Art Arfons      & Green Monster              & GE J79  \\
+1& $h$ which causes maximum buoyancy forces     & $u$ which coressponds to $h$ & Maximum uplift forces \\
+2& $\frac{2}{3}h_{max}$     & $u_{max}$       & Maximum hydrodynamic loads         \\
+3     & $h_{max}$      &   $\frac{1}{3}u_{max}$            & Maximum numbers of structural elements to be loaded  \\
 \end{tabular}
 \end{table}  
 
@@ -95,6 +96,7 @@ $\frac{2}{3}h_{max}$     & Tom Green       & Wingfoot Express           & WE J46
 \item{The inundation height has an effect on the hydrodynamic force. The higher the tsunami, the greater the hydrodynamic force. The magnitude of the tsunami base shear force on the models with inundation height of 1 floor, 2 floors and 3 floors respectively were \num{2400.64} \si{kN}; \num{15003.99} \si{kN}; \num{35600.49} \si{kN}. The increase in the base shear force occurs exponentially because the magnitude of the force depends on the square of the velocity with the upper limit of \num{15.20} \si{m/s}. The maximum bending moment that occurs in the exterior column on the models with tsunami as height as 1 floor, 2 floors and 3 floors respectively were \num{680.52} \si{kN.m}; \num{3086.75} \si{kN.m}; and \num{6629.72} \si{kN.m}. These internal forces increase significantly in relation to the tsunami height of each model.
 }
 
+\item{The tsunami load affects the design of structural elements up to the tsunami height. Structural elements that are above the inundation level are generally not affected by the tsunami that occurs. The upper-floor exterior columns were generally controlled by debris impact loads. The lower-column were controlled by hydrodynamic loads. The weight of all models differs from the earthquake model (model 1). The largest structural weight was in model 6 (3-floor tsunami with linear acceptance criteria) which was \num{33746.46} \si{kN} or an increase of \SI{22.03}{\percent} from model 1.}
 \end{enumerate}
 
 
