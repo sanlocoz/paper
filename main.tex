@@ -1,0 +1,180 @@
+\documentclass{cup-pan}
+\usepackage{blindtext}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{ragged2e}
+\sisetup{group-separator={,}}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+\title{Analysis of Seismic and Tsunami Loads Effects on 10-Story Reinforced Concrete Building based on SNI 1727:2020 with Tsunami Height Variations}
+
+\author[1]{Muhammad Ikhsan}
+\author[1]{Ahmad Muhtarom}
+
+\affil[1]{Department Civil Engineering and Planning, Sriwijaya University, Jl. Raya Prabumulih – KM 32, Indralaya, Ogan Ilir, South Sumatera. Email: \url{sipil@ft.unsri.ac.id}}
+
+%% Corresponding author
+\corrauthor{Muhammad Ikhsan}
+%% Abbreviated author list for the running footer
+\runningauthor{Muhammad Ikhsan and Ahmad Muhtarom}
+
+\addbibresource{refs.bib}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+ASCE 7-16 was adopted in Indonesia to become several building codes namely, SNI 1726:2019 for earthquake loads and its requirements and SNI 1727:2020 for minimum loads on buildings. There is a new requirement that differs from SNI 1727:2013 which is tsunami loads. This load is adopted because of its relevance to Indonesia. This study aims to know the structural response of a building subjected to different tsunami heights. Inundation heights varied from one to three floors. Structural acceptance criteria, which include linear acceptance and nonlinear acceptance, were another variation used in this study. Materials specifications, structural topology and loads—with the exception of tsunamis—were fixed variables. Independent variables were tsunami loads and structural acceptance criteria. A comparison was made to deformations, internal forces and structural weights. The results showed that the internal forces due to the tsunami loads occurred as high as the inundation height. The applied tsunami forces were hydrostatic, hydrodynamic and debris impact forces. The hydrodynamic base shear force depends on the height of the tsunami, where the greatest value was in the 3 stories tsunami high, which was \num{38392.68} kN in load case 2. Nonlinear structure acceptance could reduce the bending moment that occurs in the column up to \SI{49.66}{\percent} in comparison with linear structures. The upper floor exterior columns design was generally controlled by debris impact loads whereas the lower floor column was controlled by hydrodynamic loads. The results also show that the 10-story structure is not vulnerable to being lifted by the buoyancy load.
+
+
+
+\keywords{Linear Analysis, Nonlinear Analysis, Structural Optimization, Structural Response, Tsunami Loads.}
+\end{abstract}
+
+\section{Introduction}
+\label{sec:overview}
+
+Extreme natural phenomena such as winds, earthquakes and tsunamis exert lateral loads that can damage structures and even result in loss of life. These incidents are complex and tend to occur regularly, but cannot be predicted with high precision. The ASCE 7 standard (Minimum Design Loads and Associated Criteria for Buildings and Other Structures) quantifies these loads probabilistically based on climatology, geology and seismology from previous data and existing events \citep{leet}.
+
+The ASCE 7 standard with its latest version ASCE 7-16 has been adopted into several standards in Indonesia, including SNI 1726:2019 regarding seismic requirements and SNI 1727:2020 concerning minimum design loads. The tsunami load is a new load that is provided under this new regulation. This load was adopted because it is relevant to Indonesia. The standard will become a new reference for tsunami-prone areas in Indonesia.
+
+Environmental loads in the SNI 1727:2020 consist of vertical loads and also lateral loads. In general, for gravity or vertical loads, there is not much that can be done by engineers to the structure. Many innovations in structural engineering are generally developed to withstand lateral loads that occur in structures \citep{taranath}. The initial design process usually only considers gravity loads, thus additional design processing is required to ensure that the building can withstand the intended lateral loads that are anticipated to be applied to it during the course of its design lifetime.
+
+When an earthquake occurs, the ground suddenly shifts and structures deflect as a result of their inertia, which causes the corresponding lateral load \citep{taranath}. Tsunami and wind loads have almost the same characteristics, which depend on the surface exposed to this force. The tsunami load also has a lifting force that works opposite to the gravitational force, if there is a void that displaces the volume of tsunami water (Archimedes’ principle). These characteristics made earthquake loads to be designed iteratively, while wind and tsunami loads can be designed based on the exposed surface of the building.
+
+The adoption of ASCE 7 standard regarding tsunami load imposed new criteria on buildings in tsunami-prone areas. The tsunami load will certainly add new load cases to the building design. The uplift load on the tsunami load also makes the building must have sufficient weight to prevent lifting from the foundation. The large weight of the building on the other hand also increases the seismic force. This difference in characteristics makes it necessary to conduct research on the effects of tsunami and earthquake loads. In this study, tsunami and earthquake loads will be applied to reinforced concrete structures. Inundation height will be varied to evaluate the response of the reinforced concrete building structure.
+
+\section{Literature review}
+\label{sec:litview}
+
+\subsection{Tsunami load}
+\label{subsec:tsunami load}
+
+The tsunami consists of several wave stages, which are simplified to three load cases in the tsunami loading. ASCE and SNI provide a simple relationship between inundation depth and inflow and outflow velocity. Load cases 2 and 3 represent the critical combination of water level and flow velocity that occurs during the tsunami.
+
+Load case 2 considers the maximum velocity, $u_{max}$, during inflow and outflow when the inundation depth is $\frac{2}{3}$ of, $h_{max}$, the largest inundation depth during the tsunami. It produces the largest hydrodynamic forces. When applied to stationary objects, water velocity produces hydrodynamic forces (in this case nonmoving structures).
+
+Load case 3 represents the loading due to the maximum inundation depth, $h_{max}$, and a flow velocity as large as $\frac{1}{3}$ of the maximum flow velocity, $u_{max}$. This load case produces the force due to the largest inundation height, therefore the largest exposed surface of the building. It is meant to load all possible structural elements during the tsunami.
+
+Load case 1 assumes the inundation height which produces the greatest buoyancy forces together with the hydrodynamic forces which have velocity corresponding to the inundation height. The summary of load cases in tsunami loading according to ASCE 7-16 and SNI 1727:2020 can be found in table \ref{tab:tsunami load cases}. The inflow and outflow height of inundation and the corresponding velocity is also illustrated in figure \ref{fig:loadcases}.
+
+\begin{table}[H]
+\caption{Summary of tsunami load cases according to ASCE 7-16 and SNI 1727:2020. Source: \cite{leet}.}
+\label{tab:tsunami load cases}
+\centering
+\begin{tabular}{P{1in} P{1in} P{1in} P{1.5in}}
+\headrow \thead{Load Case} & \thead{h\textsubscript{des}} & \thead{u\textsubscript{des}} & \thead{Load implication} \\
+$h$ which causes maximum buoyancy forces     & $h$ which causes maximum buoyancy forces & Spirit of America          & GE J47  \\
+$\frac{2}{3}h_{max}$     & Tom Green       & Wingfoot Express           & WE J46  \\
+434.22      & Art Arfons      & Green Monster              & GE J79  \\
+\end{tabular}
+\end{table}  
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{fig1.png}
+\caption{This is a figure caption. Let's see what happens when it's long and contains citations \citep{asce} and cross-references: \ref{sec:overview}. Yep, works. Captions should not contain manual line breaks!}
+\label{fig:loadcases}
+\end{figure}
+
+\begin{tabular}{|p{1.5in}|p{1.5in}|}\hline
+\Centering{Persian Cat} & \RaggedRight{Dachsund Dog}\\\hline
+\RaggedRight{A long-haired domestic cat, with a broad round head.} &
+\RaggedLeft{A short-legged, long-bodied, hound-type dog breed.}\\\hline
+\end{tabular}
+
+Only two levels of sectional headings, \verb|\section| and \verb|\subsection|, should be used. Ad nemo aut quae dolores nesciunt reprehenderit occaecati. Optio distinctio at aliquam odit dolores laudantium. Illum et qui iste et laudantium dolorum. Nihil quis qui at quia alias. Quisquam ea sit aspernatur. Labore at hic voluptas cumque eum officia repellat.
+
+Here's an example parenthetical citation \citep{asce} and a text citation: \citet{asce}. There isn't a good, up-to-date BibTeX style for the Chicago style, so we're using \texttt{biblatex-chicago} instead. This means you'll need to run \texttt{biber} instead of \texttt{bibtex} if you're compiling this template on your local \LaTeX{} installation: on Overleaf, \texttt{biber} is run automatically. You can add pre-notes with citations \citep[see also][]{asce} too, as well as multiple citations \citep{asce,asce} in a single \verb|\citep{...}| or \verb|\citet{...}|. 
+
+This is an equation, numbered
+\begin{equation}
+l(\Lambda)=\sum_{i=1}^{n} \sum_{w=1}^{q} (z_{i w} \ln (\lambda_{i w}) - \lambda_{i w} - \ln (z_{i w}!))
+\label{eq:poisson}
+\end{equation}
+and one that is not numbered
+\begin{equation*}
+\int_0^{+\infty}e^{-x^2}dx=\frac{\sqrt{\pi}}{2}
+\end{equation*}
+and one inlined: $e^{i\pi}=-1$. As usual you can cross-reference equations with Equation \ref{eq:poisson} or \eqref{eq:poisson}.
+
+Figure \ref{fig:example} shows a normal figure, while figure \ref{fig:twosubs} show one made up of two sub-figures. Figure \ref{fig:landscape} is an example of a landscaped figure. You can use the \verb|\subcaption{...}| command from the \texttt{subcaption} package to add captions for subfigures and subtables, but do not use the \texttt{subfigure} package: it is incompatible with this template.
+
+\begin{figure}[bt]
+\centering
+\includegraphics[width=0.6\textwidth]{example-image.jpg}
+\caption{This is a figure caption. Let's see what happens when it's long and contains citations \citep{asce} and cross-references: \ref{sec:overview}. Yep, works. Captions should not contain manual line breaks!}
+\label{fig:example}
+\end{figure}
+
+\begin{table}[bt]
+\caption{Automobile Land Speed Records (GR 5-10). Source: \url{https://www.sedl.org/afterschool/toolkits/science/pdf/ast_sci_data_tables_sample.pdf}}
+\label{tab:example}
+\centering
+\begin{tabular}{l l l l r}
+\headrow \thead{Speed (mph)} & \thead{Driver} & \thead{Car} & \thead{Engine} & \thead{Date} \\
+407.447     & Craig Breedlove & Spirit of America          & GE J47    & 8/5/63   \\
+413.199     & Tom Green       & Wingfoot Express           & WE J46    & 10/2/64  \\
+434.22      & Art Arfons      & Green Monster              & GE J79    & 10/5/64  \\
+468.719     & Craig Breedlove & Spirit of America          & GE J79    & 10/13/64 \\
+526.277     & Craig Breedlove & Spirit of America          & GE J79    & 10/15/65 \\
+536.712     & Art Arfons      & Green Monster              & GE J79    & 10/27/65 \\
+555.127     & Craig Breedlove & Spirit of America, Sonic 1 & GE J79    & 11/2/65  \\
+576.553     & Art Arfons      & Green Monster              & GE J79    & 11/7/65  \\
+600.601     & Craig Breedlove & Spirit of America, Sonic 1 & GE J79    & 11/15/65 \\
+622.407     & Gary Gabelich   & Blue Flame                 & Rocket    & 10/23/70 \\
+633.468     & Richard Noble   & Thrust 2                   & RR RG 146 & 10/4/83  \\
+763.035     & Andy Green      & Thrust SSC                 & RR Spey   & 10/15/97\\
+\end{tabular}
+
+\end{table}
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?
+
+
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit, qui in ea voluptate velit esse, quam nihil molestiae consequatur, vel illum, qui dolorem eum fugiat, quo voluptas nulla pariatur?
+
+
+\begin{figure}
+\begin{minipage}{0.47\textwidth}
+\includegraphics[width=\linewidth]{example-image}
+\subcaption{This is a subfigure}
+\end{minipage}
+\hfill
+\begin{minipage}{0.47\textwidth}
+\includegraphics[width=\linewidth]{example-image}
+\subcaption{This is another subfigure}
+\end{minipage}
+
+\caption{This is a caption for the entire figure}
+\label{fig:twosubs}
+\end{figure}
+
+\begin{sidewaysfigure}
+\centering
+\includegraphics[width=19cm]{example-image}
+\caption{This is a figure caption}
+\label{fig:landscape}
+\end{sidewaysfigure}
+
+At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non-provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates repudiandae sint et molestiae non-recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat
+
+At vero eos et accusamus et iusto odio dignissimos ducimus, qui blanditiis praesentium voluptatum deleniti atque corrupti, quos dolores et quas molestias excepturi sint, obcaecati cupiditate non-provident, similique sunt in culpa, qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet, ut et voluptates\footnote{Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo. Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt, neque porro quisquam est, qui dolorem ipsum, quia dolor sit amet consectetur adipisci[ng] velit, sed quia non-numquam [do] eius modi tempora inci[di]dunt, ut labore et dolore magnam aliquam quaerat voluptatem.} repudiandae sint et molestiae non-recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+
+\blinddocument
+
+\bigskip
+If you have supplementary material (such as an appendix), it should not be included in your manuscript but uploaded as a separate PDF.
+
+\paragraph*{Acknowledgments.} We are grateful for the technical assistance of A.~Author.
+
+\paragraph*{Data Availability Statement.} Replication data and code can be found in Harvard Dataverse: \url{https://doi.org/link}.
+
+\nocite{*}
+\printbibliography
+\end{document}
