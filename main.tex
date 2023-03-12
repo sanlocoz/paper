@@ -63,9 +63,10 @@ Load case 1 assumes the inundation height which produces the greatest buoyancy f
 
 %\begin{table}[H]
 %\renewcommand{\arraystretch}{1.5}
-\label{tab:tsunami load cases}
+
 %\centering
 
+\renewcommand{\arraystretch}{1}
 \begin{longtable}{P{1in} P{1in} P{1in} P{1.5in}}
 \caption{Summary of tsunami load cases according to ASCE 7-16 and SNI 1727:2020. Source: \cite{leet}.}\\
 
@@ -73,7 +74,7 @@ Load case 1 assumes the inundation height which produces the greatest buoyancy f
 1& $h$ which causes maximum buoyancy forces     & $u$ which coressponds to $h$ & Maximum uplift forces \\
 2& $\frac{2}{3}h_{max}$     & $u_{max}$       & Maximum hydrodynamic loads         \\
 3     & $h_{max}$      &   $\frac{1}{3}u_{max}$            & Maximum numbers of structural elements to be loaded  \\
-
+\label{tab:tsunami load cases}
 \end{longtable}
 %\end{table}  
 
@@ -90,12 +91,11 @@ Load case 1 assumes the inundation height which produces the greatest buoyancy f
 \section{Results and discussion}
 \label{sec:results}
 
-\begin{table}[H]
-\renewcommand{\arraystretch}{1.5}
-\caption{Summary of structural elements in model 1 (earthquake loads only).}
-\label{tab:cross section model 1}
-\centering
-\begin{tabular}{P{1in} P{1in} P{1in} P{1.5in}}
+%\begin{table}[H]
+\renewcommand{\arraystretch}{1}
+%\centering
+\begin{longtable}{P{0.75in} P{1.25in} P{1.25in} P{1.25in}}
+\caption{Summary of structural elements in model 1 (earthquake loads only).}\\
 \headrow \thead{Floor} & \thead{Beam cross section (mm)} & \thead{Column cross section (mm)} & \thead{Structure weight (kN)} \\
 1 & $300 \times 400$ & $500 \times 500$ & \num{3256.43}  \\
 2 & $300 \times 400$ & $500 \times 500$ & \num{3124.04}  \\
@@ -108,29 +108,117 @@ Load case 1 assumes the inundation height which produces the greatest buoyancy f
 9 & $250 \times 300$ & $300 \times 300$ & \num{2276.04}  \\
 10 & $250 \times 300$ & $300 \times 300$ & \num{2276.04}  \\
  &  & Total structural weight & \num{27652.93}  \\
-\end{tabular}
-\end{table}  
+\label{tab:cross section model 1}
+\end{longtable}
+%\end{table}  
 
-\begin{table}[H]
-\renewcommand{\arraystretch}{1.5}
-\caption{Summary of structural elements in model 1 (earthquake loads only).}
-\label{tab:cross section model 1}
-\centering
-\begin{tabular}{P{1in} P{1in} P{1in} P{1.5in}}
-\headrow \thead{Floor} & \thead{Beam cross section (mm)} & \thead{Column cross section (mm)} & \thead{Structure weight (kN)} \\
-1 & $300 \times 400$ & $500 \times 500$ & \num{3256.43}  \\
-2 & $300 \times 400$ & $500 \times 500$ & \num{3124.04}  \\
-3 & $300 \times 400$ & $500 \times 500$ & \num{3124.04}  \\
-4 & $300 \times 400$ & $500 \times 500$ & \num{3124.04}  \\
-5 & $250 \times 400$ & $400 \times 400$ & \num{2683.10}  \\
-6 & $250 \times 400$ & $400 \times 400$ & \num{2683.10}  \\
-7 & $250 \times 400$ & $350 \times 350$ & \num{2553.03}  \\
-8 & $250 \times 400$ & $350 \times 350$ & \num{2553.03}  \\
-9 & $250 \times 300$ & $300 \times 300$ & \num{2276.04}  \\
-10 & $250 \times 300$ & $300 \times 300$ & \num{2276.04}  \\
- &  & Total structural weight & \num{27652.93}  \\
-\end{tabular}
-\end{table}  
+\renewcommand{\arraystretch}{1}
+\begin{longtable}{P{0.5in} P{1in} P{1in} P{1in} P{1in}}
+\caption{Summary of structural elements in model 2.}\\
+\headrow \thead{Floor} & \thead{Interior column (mm)} & \thead{Exterior column (mm)} & \thead{Beam (mm)} & \thead{Structure weight (kN)} \\
+1 & $500 \times 500$ & $600 \times 600$ & $300 \times 400$ & \num{3495.37} \\
+2 & $500 \times 500$ & $500 \times 500$ & $300 \times 400$ & \num{3124.04} \\
+3 & $500 \times 500$ & $500 \times 500$ & $300 \times 400$ & \num{3124.04} \\
+4 & $500 \times 500$ & $500 \times 500$ & $300 \times 400$ & \num{3124.04} \\
+5 & $400 \times 400$ & $400 \times 400$ & $250 \times 400$ & \num{2683.10} \\
+6 & $400 \times 400$ & $400 \times 400$ & $250 \times 400$ & \num{2683.10} \\
+7 & $350 \times 350$ & $350 \times 350$ & $250 \times 400$ & \num{2553.03} \\
+8 & $350 \times 350$ & $350 \times 350$ & $250 \times 400$ & \num{2553.03} \\
+9 & $300 \times 300$ & $300 \times 300$ & $250 \times 300$ & \num{2276.04} \\
+10 & $300 \times 300$ & $300 \times 300$ & $250 \times 300$ & \num{2276.04} \\
+ &  & & Total structural weight & \num{27891.86} \\
+\label{tab:cross section model 2}
+\end{longtable}
+
+\renewcommand{\arraystretch}{1}
+\begin{longtable}{P{0.5in} P{1in} P{1in} P{1in} P{1in}}
+\caption{Summary of structural elements in model 3.} \\
+\headrow \thead{Floor} & \thead{Interior column (mm)} & \thead{Exterior column (mm)} & \thead{Beam (mm)} & \thead{Structure weight (kN)} \\
+1 & $500 \times 500$ & $550 \times 550$ & $300 \times 400$ & \num{3370.25} \\
+2 & $500 \times 500$ & $500 \times 500$ & $300 \times 400$ & \num{3124.04} \\
+3 & $500 \times 500$ & $500 \times 500$ & $300 \times 400$ & \num{3124.04} \\
+4 & $500 \times 500$ & $500 \times 500$ & $300 \times 400$ & \num{3124.04} \\
+5 & $400 \times 400$ & $400 \times 400$ & $250 \times 400$ & \num{2683.10} \\
+6 & $400 \times 400$ & $400 \times 400$ & $250 \times 400$ & \num{2683.10} \\
+7 & $350 \times 350$ & $350 \times 350$ & $250 \times 400$ & \num{2553.03} \\
+8 & $350 \times 350$ & $350 \times 350$ & $250 \times 400$ & \num{2553.03} \\
+9 & $300 \times 300$ & $300 \times 300$ & $250 \times 300$ & \num{2276.04} \\
+10 & $300 \times 300$ & $300 \times 300$ & $250 \times 300$ & \num{2276.04} \\
+ &  & & Total structural weight & \num{27766.74} \\
+\label{tab:cross section model 3}
+\end{longtable}
+
+\renewcommand{\arraystretch}{1}
+\begin{longtable}{P{0.5in} P{1in} P{1in} P{1in} P{1in}}
+\caption{Summary of structural elements in model 4.}\\
+\headrow \thead{Floor} & \thead{Interior column (mm)} & \thead{Exterior column (mm)} & \thead{Beam (mm)} & \thead{Structure weight (kN)} \\
+1 & $650 \times 650$ & $1000 \times 1000$ & $350 \times 500$ & \num{5540.42} \\
+2 & $500 \times 500$ & $550 \times 550$ & $300 \times 400$ & \num{3223.03} \\
+3 & $500 \times 500$ & $500 \times 500$ & $300 \times 400$ & \num{3124.04} \\
+4 & $500 \times 500$ & $500 \times 500$ & $300 \times 400$ & \num{3124.04} \\
+5 & $400 \times 400$ & $400 \times 400$ & $250 \times 400$ & \num{2683.10} \\
+6 & $400 \times 400$ & $400 \times 400$ & $250 \times 400$ & \num{2683.10} \\
+7 & $350 \times 350$ & $350 \times 350$ & $250 \times 400$ & \num{2553.03} \\
+8 & $350 \times 350$ & $350 \times 350$ & $250 \times 400$ & \num{2553.03} \\
+9 & $300 \times 300$ & $300 \times 300$ & $250 \times 300$ & \num{2276.04} \\
+10 & $300 \times 300$ & $300 \times 300$ & $250 \times 300$ & \num{2276.04} \\
+ &  & & Total structural weight & \num{30035.91} \\
+\label{tab:cross section model 4}
+\end{longtable}
+
+\renewcommand{\arraystretch}{1}
+\begin{longtable}{P{0.5in} P{1in} P{1in} P{1in} P{1in}}
+\caption{Summary of structural elements in model 5.}\\
+\headrow \thead{Floor} & \thead{Interior column (mm)} & \thead{Exterior column (mm)} & \thead{Beam (mm)} & \thead{Structure weight (kN)} \\
+1 & $650 \times 650$ & $650 \times 650$ & $300 \times 400$ & \num{3124.04} \\
+2 & $500 \times 500$ & $550 \times 550$ & $300 \times 400$ & \num{3223.03} \\
+3 & $500 \times 500$ & $500 \times 500$ & $300 \times 400$ & \num{3124.04} \\
+4 & $500 \times 500$ & $500 \times 500$ & $300 \times 400$ & \num{3124.04} \\
+5 & $400 \times 400$ & $400 \times 400$ & $250 \times 400$ & \num{2683.10} \\
+6 & $400 \times 400$ & $400 \times 400$ & $250 \times 400$ & \num{2683.10} \\
+7 & $350 \times 350$ & $350 \times 350$ & $250 \times 400$ & \num{2553.03} \\
+8 & $350 \times 350$ & $350 \times 350$ & $250 \times 400$ & \num{2553.03} \\
+9 & $300 \times 300$ & $300 \times 300$ & $250 \times 300$ & \num{2276.04} \\
+10 & $300 \times 300$ & $300 \times 300$ & $250 \times 300$ & \num{2276.04} \\
+ &  & & Total structural weight & \num{28450.52} \\
+\label{tab:cross section model 5}
+\end{longtable}
+
+\renewcommand{\arraystretch}{1}
+\begin{longtable}{P{0.5in} P{1in} P{1in} P{1in} P{1in}}
+\caption{Summary of structural elements in model 6.}\\
+\headrow \thead{Floor} & \thead{Interior column (mm)} & \thead{Exterior column (mm)} & \thead{Beam (mm)} & \thead{Structure weight (kN)} \\
+1 & $900\times900$ & $900\times1400$ & $400\times600$ & \num{7182.79} \\
+2 & $800\times800$ & $800\times800$ & $400\times600$ & \num{5192.22} \\
+3 & $500\times500$ & $550\times550$ & $300\times400$ & \num{3223.03} \\
+4 & $500\times500$ & $500\times500$ & $300\times400$ & \num{3124.04} \\
+5 & $400\times400$ & $400\times400$ & $250\times400$ & \num{2683.10} \\
+6 & $400\times400$ & $400\times400$ & $250\times400$ & \num{2683.10} \\
+7 & $350\times350$ & $350\times350$ & $250\times400$ & \num{2553.03} \\
+8 & $350\times350$ & $350\times350$ & $250\times400$ & \num{2553.03} \\
+9 & $300\times300$ & $300\times300$ & $250\times300$ & \num{2276.04} \\
+10 & $300\times300$ & $300\times300$ & $250\times300$ & \num{2276.04} \\
+ &  & & Total structural weight & \num{33746.46} \\
+\label{tab:cross section model 6}
+\end{longtable}
+
+\renewcommand{\arraystretch}{1}
+\begin{longtable}{P{0.5in} P{1in} P{1in} P{1in} P{1in}}
+\caption{Summary of structural elements in model 7.}\\
+\headrow \thead{Floor} & \thead{Interior column (mm)} & \thead{Exterior column (mm)} & \thead{Beam (mm)} & \thead{Structure weight (kN)} \\
+1 & $900\times900$ & $900\times900$ & $300\times400$ & \num{5543.00} \\
+2 & $700\times700$ & $700\times700$ & $300\times400$ & \num{3970.77} \\
+3 & $500\times500$ & $550\times550$ & $300\times400$ & \num{3223.03} \\
+4 & $500\times500$ & $500\times500$ & $300\times400$ & \num{3124.04} \\
+5 & $400\times400$ & $400\times400$ & $250\times400$ & \num{2683.10} \\
+6 & $400\times400$ & $400\times400$ & $250\times400$ & \num{2683.10} \\
+7 & $350\times350$ & $350\times350$ & $250\times400$ & \num{2553.03} \\
+8 & $350\times350$ & $350\times350$ & $250\times400$ & \num{2553.03} \\
+9 & $300\times300$ & $300\times300$ & $250\times300$ & \num{2276.04} \\
+10 & $300\times300$ & $300\times300$ & $250\times300$ & \num{2276.04} \\
+ &  & & Total structural weight & \num{30885.21} \\
+\label{tab:cross section model 7}
+\end{longtable}
 
 \section{Conclusion}
 \label{sec:conclusion}
