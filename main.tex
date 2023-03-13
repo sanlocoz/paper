@@ -113,7 +113,7 @@ Earthquakes model structural design was carried out by using heuristic optimizat
 \label{fig:YZ view}
 \end{figure}
 
-The structure was designed to have typical beams and columns for one floor. A summary of the cross-section of the building per floor can be seen in table \ref{tab:cross section model 1}. The building has a structural weight of, $W_{structure}=\num{27652,93} \si{kN}$. The base shear force for the seismic load in Banda Aceh for that particular structure was, $E_h=\num{2988,625} \si{kN}$.
+The structure was designed to have typical beams and columns for one floor. A summary of the cross-section of the building per floor can be seen in table \ref{tab:cross section model 1}. The building has a structural weight of, $W_{structure}=\num{27652,93} \si{kN}$. The base shear force for the seismic load in Banda Aceh for that particular structure was, $E_h=\num{2988,62} \si{kN}$.
 
 %\begin{table}[H]
 \renewcommand{\arraystretch}{1}
@@ -168,6 +168,7 @@ Structures that were built to withstand seismic forces had their designs tested 
 \label{fig:lc3}
 \end{figure}
 
+The structure of model 1, in table \ref{tab:cross section model 1} was loaded with each load case within each model and optimized to resist the loads with the corresponding structural acceptance criteria according to table \ref{tab:model definition}. The results of structural optimization for each tsunami load model can be seen from table \ref{tab:cross section model 2} to \ref{tab:cross section model 7}.
 
 \renewcommand{\arraystretch}{1}
 \begin{longtable}{P{0.5in} P{1in} P{1in} P{1in} P{1in}}
@@ -277,6 +278,56 @@ Structures that were built to withstand seismic forces had their designs tested 
 \label{tab:cross section model 7}
 \end{longtable}
 
+In Figure \ref{fig:base shear} it can be seen that for models 2 and 3 the tsunami base shear force that occurs was smaller than the seismic base shear force with an overstrength factor. This was consistent with the results of structural analysis, where the dimensional changes in the exterior columns were only caused by local forces which were the debris impact loads. The moment resisting system for models 2 and 3 did not need to be changed from model 1 to withstand a tsunami load as high as 1 floor. Changes were made due to local tsunami loads in the form of local hydrodynamic forces and debris impact loads. In model 4 the tsunami base shear force that occurs exceeds the capacity resulting from the seismic base shear force with an overstrength factor, thus it was necessary to change the dimensions of the lateral force resisting systems.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.7\textwidth]{Picture12_engels.png}
+\caption{Structural weight and base shear forces.}
+\label{fig:base shear}
+\end{figure}
+
+The maximum forces in beams and columns were compared for each model. The forces for the beam elements were reviewed for the case of the overall hydrodynamic load. The internal force for the beam elements was taken for the largest value for each model, for support and middle section values. Figures \ref{fig:maxmomentbeam} and \ref{fig:maxshearbeam} show the maximum values for internal forces in each model for beam structural elements.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{Picture13_engels.png}
+\caption{Maximum bending moment for beams in each model.}
+\label{fig:maxmomentbeam}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{Picture14_engels.png}
+\caption{Maximum shear force for beams in each model.}
+\label{fig:maxshearbeam}
+\end{figure}
+
+
+The internal forces for the columns were taken in the case of component hydrodynamic loads for the exterior and interior columns. The internal forces taken were in the form of axial force, shear force and bending moment. The internal forces taken were for the exterior column and interior column. Figures \ref{fig:maxaxialcolumn} to \ref{fig:maxmomentcolumn} show the plot of internal forces for column structural elements for each model.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{Picture15_engels.png}
+\caption{Maximum axial force for columns in each model.}
+\label{fig:maxaxialcolumn}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{Picture16_engels.png}
+\caption{Maximum shear force for columns in each model.}
+\label{fig:maxshearcolumn}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{Picture17_engels.png}
+\caption{Maximum bending moment for columns in each model.}
+\label{fig:maxmomentcolumn}
+\end{figure}
+
+
 \renewcommand{\arraystretch}{1}
 \begin{longtable}{P{0.5in} P{1in} P{1in} P{1in} P{1in}}
 \caption{Summary of critical axial forces in base columns to determine lifting.}\\
@@ -302,8 +353,6 @@ Structures that were built to withstand seismic forces had their designs tested 
 
 \item{The tsunami load affects the design of structural elements up to the tsunami height. Structural elements that are above the inundation level are generally not affected by the tsunami that occurs. The upper-floor exterior columns were generally controlled by debris impact loads. The lower-column were controlled by hydrodynamic loads. The weight of all models differs from the earthquake model (model 1). The largest structural weight was in model 6 (3-floor tsunami with linear acceptance criteria) which was \num{33746.46} \si{kN} or an increase of \SI{22.03}{\percent} from model 1.}
 \end{enumerate}
-
-
 
 Only two levels of sectional headings, \verb|\section| and \verb|\subsection|, should be used. Ad nemo aut quae dolores nesciunt reprehenderit occaecati. Optio distinctio at aliquam odit dolores laudantium. Illum et qui iste et laudantium dolorum. Nihil quis qui at quia alias. Quisquam ea sit aspernatur. Labore at hic voluptas cumque eum officia repellat.
 
