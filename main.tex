@@ -8,6 +8,40 @@
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \usepackage{longtable}
 \usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+\tikzstyle{startstop} = [rectangle, rounded corners, 
+minimum width=3cm, 
+minimum height=1cm,
+text centered, 
+draw=black, 
+fill=red!30]
+
+\tikzstyle{io} = [trapezium, 
+trapezium stretches=true, % A later addition
+trapezium left angle=70, 
+trapezium right angle=110, 
+minimum width=3cm, 
+minimum height=1cm, text centered, 
+draw=black, fill=blue!30]
+
+\tikzstyle{process} = [rectangle, 
+minimum width=3cm, 
+minimum height=1cm, 
+text centered, 
+text width=3cm, 
+draw=black, 
+fill=orange!30]
+
+\tikzstyle{decision} = [diamond, 
+minimum width=3cm, 
+minimum height=1cm, 
+text centered, 
+draw=black, 
+fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
 
 \newenvironment{conditions*}
   {\par\vspace{\abovedisplayskip}\noindent
@@ -31,6 +65,10 @@
 \begin{document}
 
 \maketitle
+
+
+
+
 
 \begin{abstract}
 ASCE 7-16 was adopted in Indonesia to become several building codes namely, SNI 1726:2019 for earthquake loads and its requirements and SNI 1727:2020 for minimum loads on buildings. There is a new requirement that differs from SNI 1727:2013 which is tsunami loads. This load is adopted because of its relevance to Indonesia. This study aims to know the structural response of a building subjected to different tsunami heights. Inundation heights varied from one to three floors. Structural acceptance criteria, which include linear acceptance and nonlinear acceptance, were another variation used in this study. Materials specifications, structural topology and loads—with the exception of tsunamis—were fixed variables. Independent variables were tsunami loads and structural acceptance criteria. A comparison was made to deformations, internal forces and structural weights. The results showed that the internal forces due to the tsunami loads occurred as high as the inundation height. The applied tsunami forces were hydrostatic, hydrodynamic and debris impact forces. The hydrodynamic base shear force depends on the height of the tsunami, where the greatest value was in the 3 stories tsunami high, which was \num{38392.68} kN in load case 2. Nonlinear structure acceptance could reduce the bending moment that occurs in the column up to \SI{49.66}{\percent} in comparison with linear structures. The upper floor exterior columns design was generally controlled by debris impact loads whereas the lower floor column was controlled by hydrodynamic loads. The results also show that the 10-story structure is not vulnerable to being lifted by the buoyancy load.
@@ -204,11 +242,91 @@ C_{cx}= \frac{\sum(A_{col}+A_{wall})+1.5 \times A_{beam}}{B \times h_{sx}}\label
 The areas of the columns and walls are the vertical projections of the columns and walls. The area of the beam is the largest beam exposed to flow laterally. This sum is divided by the width of the entire wall, $B$, multiplied by the average story height, $h_{sx}$.  The closure coefficient, $C_{cx}$, taken need not be more than \num{1.00}.
 
 \subsubsection{Debris impact load}
+ASCE and SNI standards provide a simple equation for calculating debris impact loads. The impact load can be taken in value as equations \ref{eq:dlkips} or \ref{eq:dlkn}.
+
+\begin{equation}
+F_{i} = 330 \times C_o \times I_{tsu} (kips)
+\label{eq:dlkips}
+\end{equation}
+
+\begin{equation}
+F_{i} = \num{1470}  \times C_o \times I_{tsu} (kN)
+\label{eq:dlkn}
+\end{equation}
+
+\noindent where:
+
+\begin{conditions*}
+C_0 & 0,65, is the orientation coefficient of the debris which represents the probability of debris not hitting the building perpendicularly\\
+I_{tsu} & tsunami importance factor \\
+\end{conditions*}
+
+\subsection{Earthquake Load}
+Earthquake load are caused by ground movements that cause buildings to change suddenly. This movement causes a deflection in the building, due to the inertia of the building. This causes an internal force due to the deflection as shown in figure \ref{fig:deflected quake}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{Picture4.png}
+\caption{Displacement of buildings caused by earthquake \citep{taranath}.}
+\label{fig:deflected quake}
+\end{figure}
+
+Earthquake load has been adopted in the SNI 1726:2019 standard. Maximum considered earhquake is probability of the value being exceeded in magnitude for 50 years by \SI{2}{\percent}. The considered earthquake has an effective return period of 2475 years. The method of response spectrum analysis for applying earthquake forces in accordance with SNI 1726:2019 are given in \ref{subsub: eqimportance} to \ref{subsub: appresponsespectrum}.
 
 \section{Methodology}
 \label{sec:method}
 
-The following is the research flowchart used in this study:
+Research flowchart used in this study can be seen in figure \ref{fig: flowchart}.
+
+\begin{sidewaysfigure}
+\centering
+\begin{tikzpicture}[node distance=2cm]
+
+\node (start) [startstop] {Start};
+\node (in1) [io, below of=start] {Input};
+\node (pro1) [process, below of=in1] {Process 1};
+\node (dec1) [decision, below of=pro1, yshift=-0.5cm] {Decision 1};
+
+\node (pro2a) [process, below of=dec1, yshift=-0.5cm] {Process 2a
+text text text text
+text text text 
+text text text};
+
+\node (pro2b) [process, right of=dec1, xshift=2cm] {Process 2b};
+\node (out1) [io, below of=pro2a] {Output};
+\node (stop) [startstop, below of=out1] {Stop};
+
+\draw [arrow] (start) -- (in1);
+\draw [arrow] (in1) -- (pro1);
+\draw [arrow] (pro1) -- (dec1);
+\draw [arrow] (dec1) -- node[anchor=east] {yes} (pro2a);
+\draw [arrow] (dec1) -- node[anchor=south] {no} (pro2b);
+\draw [arrow] (pro2b) |- (pro1);
+\draw [arrow] (pro2a) -- (out1);
+\draw [arrow] (out1) -- (stop);
+
+\end{tikzpicture}
+
+\caption{Lifting force due to volume of water displaced by objects \citep{leet}.}
+\label{fig: flowchart}
+\end{sidewaysfigure}
+
+
+Earthquakes model structural design was carried out by using heuristic optimization. Design optimization is done by adjusting the member sizes to the behavior of the structure. The structural member size results to resist earthquake load
+
+Earthquakes model structural design was carried out by using heuristic optimization. Design optimization is done by adjusting the member sizes to the behavior of the structure. The structural member size results to resist earthquake load
+
+Earthquakes model structural design was carried out by using heuristic optimization. Design optimization is done by adjusting the member sizes to the behavior of the structure. The structural member size results to resist earthquake load\\
+
+Earthquakes model structural design was carried out by using heuristic optimization. Design optimization is done by adjusting the member sizes to the behavior of the structure. The structural member size results to resist earthquake load
+
+Earthquakes model structural design was carried out by using heuristic optimization. Design optimization is done by adjusting the member sizes to the behavior of the structure. The structural member size results to resist earthquake load
+
+
+Earthquakes model structural design was carried out by using heuristic optimization. Design optimization is done by adjusting the member sizes to the behavior of the structure. The structural member size results to resist earthquake load
+Earthquakes model structural design was carried out by using heuristic optimization. Design optimization is done by adjusting the member sizes to the behavior of the structure. The structural member size results to resist earthquake load
+Earthquakes model structural design was carried out by using heuristic optimization. Design optimization is done by adjusting the member sizes to the behavior of the structure. The structural member size results to resist earthquake load
+Earthquakes model structural design was carried out by using heuristic optimization. Design optimization is done by adjusting the member sizes to the behavior of the structure. The structural member size results to resist earthquake load
 
 \section{Results and discussion}
 \label{sec:results}
