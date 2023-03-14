@@ -7,6 +7,12 @@
 \usepackage{array}
 \newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
 \usepackage{longtable}
+\usepackage{tabularx}
+
+\newenvironment{conditions*}
+  {\par\vspace{\abovedisplayskip}\noindent
+   \tabularx{\columnwidth}{>{$}l<{$} @{${}={}$} >{\raggedright\arraybackslash}X}}
+  {\endtabularx\par\vspace{\belowdisplayskip}}
 
 \title{Analysis of Seismic and Tsunami Loads Effects on 10-Story Reinforced Concrete Building based on SNI 1727:2020 with Tsunami Height Variations}
 
@@ -88,6 +94,50 @@ The tsunami load under consideration must be determined by the graph in figure \
 \end{figure}
 
 \subsubsection{Hydrostatic load}
+Hydrostatic load is caused by the stationary mass of water. The load due to the hydrostatic force of water is in the form of horizontal and vertical forces from structures submerged in water. Equation \ref{eq:hydrostatic load} describes the horizontal force that results from the hydrostatic pressure of water.
+
+\begin{equation}
+F_h= \frac{1}{2} \gamma_s b h_{des}^2
+\label{eq:hydrostatic load}
+\end{equation}
+
+\noindent where:
+
+\begin{conditions*}
+b    &  width of submerged elements\\
+h_{des}     &  designed water level \\
+\gamma_{s} &  \num{1130}\unit{kg/m^3} (density of seawater, \num{1030}\unit{kg/m^3}, multiplied by 1.1 to account for the sediment and debris in tsunami water)\\
+\end{conditions*}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{Picture1.png}
+\caption{Hydrostatic pressure due to tsunami inundation \citep{leet}.}
+\label{fig:hydrostatic}
+\end{figure}
+
+Hydrostatic force can work in vertical and horizontal directions. If the inundation height is above the height of opening in the building, water entering through the opening will remain in the building after the tsunami wave subsides. The magnitude of the additional load on the floor can be expressed as pressure in equation \ref{eq:hydrostatic vertical}.
+
+\begin{equation}
+p_r= \gamma_s h_{r}
+\label{eq:hydrostatic vertical}
+\end{equation}
+
+\noindent where:
+
+\begin{conditions*}
+h_r    &  height of the wall above the submerged floor, refer to figure \ref{fig: vertical hydrostatic}\\
+\end{conditions*}
+
+Hydrostatic pressure also causes horizontal forces when the tsunami waves subside. The pressure that arises due to water entering the building is shown in figure \ref{fig: vertical hydrostatic}. Vertical pressure can also be seen which provides additional weight to the submerged floor.
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{Picture2.png}
+\caption{Pressure due to hydrostatic forces (a) when tsunami reaches its maximum (b) after the wave subsided \citep{leet}.}
+\label{fig: vertical hydrostatic}
+\end{figure}
 
 \section{Methodology}
 \label{sec:method}
@@ -377,24 +427,6 @@ Nonlinear plastic hinges were compared to nonlinear models 3, 5 and 7. The resul
 \item{The tsunami load affects the design of structural elements up to the tsunami height. Structural elements that are above the inundation level are generally not affected by the tsunami that occurs. The upper-floor exterior columns were generally controlled by debris impact loads. The lower-column were controlled by hydrodynamic loads. The weight of all models differs from the earthquake model (model 1). The largest structural weight was in model 6 (3-floor tsunami with linear acceptance criteria) which was \num{33746.46} \si{kN} or an increase of \SI{22.03}{\percent} from model 1.}
 \end{enumerate}
 
-Only two levels of sectional headings, \verb|\section| and \verb|\subsection|, should be used. Ad nemo aut quae dolores nesciunt reprehenderit occaecati. Optio distinctio at aliquam odit dolores laudantium. Illum et qui iste et laudantium dolorum. Nihil quis qui at quia alias. Quisquam ea sit aspernatur. Labore at hic voluptas cumque eum officia repellat.
-
-Here's an example parenthetical citation \citep{asce} and a text citation: \citet{asce}. There isn't a good, up-to-date BibTeX style for the Chicago style, so we're using \texttt{biblatex-chicago} instead. This means you'll need to run \texttt{biber} instead of \texttt{bibtex} if you're compiling this template on your local \LaTeX{} installation: on Overleaf, \texttt{biber} is run automatically. You can add pre-notes with citations \citep[see also][]{asce} too, as well as multiple citations \citep{asce,asce} in a single \verb|\citep{...}| or \verb|\citet{...}|. 
-
-This is an equation, numbered
-\begin{equation}
-l(\Lambda)=\sum_{i=1}^{n} \sum_{w=1}^{q} (z_{i w} \ln (\lambda_{i w}) - \lambda_{i w} - \ln (z_{i w}!))
-\label{eq:poisson}
-\end{equation}
-and one that is not numbered
-\begin{equation*}
-\int_0^{+\infty}e^{-x^2}dx=\frac{\sqrt{\pi}}{2}
-\end{equation*}
-and one inlined: $e^{i\pi}=-1$. As usual you can cross-reference equations with Equation \ref{eq:poisson} or \eqref{eq:poisson}.
-
-Figure \ref{fig:example} shows a normal figure, while figure \ref{fig:twosubs} show one made up of two sub-figures. Figure \ref{fig:landscape} is an example of a landscaped figure. You can use the \verb|\subcaption{...}| command from the \texttt{subcaption} package to add captions for subfigures and subtables, but do not use the \texttt{subfigure} package: it is incompatible with this template.
-
-
 \begin{figure}
 \begin{minipage}{0.47\textwidth}
 \includegraphics[width=\linewidth]{example-image}
@@ -417,7 +449,7 @@ Figure \ref{fig:example} shows a normal figure, while figure \ref{fig:twosubs} s
 \label{fig:landscape}
 \end{sidewaysfigure}
 
-\blinddocument
+%\blinddocument
 
 \bigskip
 
