@@ -172,7 +172,27 @@ F_{dx}= \frac{1}{2}\rho_s I_{tsu} C_d C_{cx} B h_{des} u_{des}^2
 \begin{conditions*}
 F_{dx}   &  hydrodynamic lateral force applied at level x\\
 \rho_{s}   &  specific gravity of tsunami water, \num{1130}\unit{kg/m^3}\\
+B & building wall width\\
+u_{des} & corresponding flow rate according to figure \ref{fig:loadcases}\\
+I_{tsu} & tsunami importance factor \\
+C_d & drag coefficient ratio based on table \ref{tab:dragcoeff} \\
+C_{cx} & closure coefficient, refer to equation  \ref{eq:closurecoeff} \\
 \end{conditions*}
+
+\renewcommand{\arraystretch}{1}
+\begin{longtable}{P{2in} P{2in}}
+\caption{Drag coefficient for rectangular structures. Source: \cite{sni172720} and \cite{asce}.}\\
+
+\headrow \thead{Ratio betweeen width and inundation depth, $B/h_{sx}$} & \thead{Drag Coefficient, $C_d$}  \\
+$<12$ &$1.25$\\
+$16$ & $1.30$\\
+$26$ & $1.40$\\
+$36$ & $1.50$\\
+$60$ & $1.75$\\
+$100$ & $1.80$\\
+$\geq 120$ & $2.00$\\
+\label{tab:dragcoeff}
+\end{longtable}
 
 \section{Methodology}
 \label{sec:method}
