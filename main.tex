@@ -139,6 +139,41 @@ Hydrostatic pressure also causes horizontal forces when the tsunami waves subsid
 \label{fig: vertical hydrostatic}
 \end{figure}
 
+Lift can occur if there is empty space that is submerged without openings. The lift force of the structure displacing the volume of water can be expressed by equation \ref{eq:lift}. This is the same as Archimedes’ principle of body submerged in water.
+
+\begin{equation}
+F_v= \gamma_s V_w
+\label{eq:lift}
+\end{equation}
+
+\noindent where:
+
+\begin{conditions*}
+V_w    &  the volume of water displaced from the structure\\
+\end{conditions*}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{Picture3.png}
+\caption{Lifting force due to volume of water displaced by objects \citep{leet}.}
+\label{fig: lifting force}
+\end{figure}
+
+\subsubsection{Hydrodynamic load}
+Hydrodynamic loads have a principle similar to pressure caused by wind, hydrodynamic loads vary according to speed $u$. The lateral force applied to the lateral force resisting system at each height, $x$, can be calculated by equation \ref{eq:hydrodynamic}.
+
+\begin{equation}
+F_{dx}= \frac{1}{2}\rho_s I_{tsu} C_d C_{cx} B h_{des} u_{des}^2
+\label{eq:hydrodynamic}
+\end{equation}
+
+\noindent where:
+
+\begin{conditions*}
+F_{dx}   &  hydrodynamic lateral force applied at level x\\
+\rho_{s}   &  specific gravity of tsunami water, \num{1130}\unit{kg/m^3}\\
+\end{conditions*}
+
 \section{Methodology}
 \label{sec:method}
 
