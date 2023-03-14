@@ -173,6 +173,7 @@ F_{dx}= \frac{1}{2}\rho_s I_{tsu} C_d C_{cx} B h_{des} u_{des}^2
 F_{dx}   &  hydrodynamic lateral force applied at level x\\
 \rho_{s}   &  specific gravity of tsunami water, \num{1130}\unit{kg/m^3}\\
 B & building wall width\\
+h_{des} & inundation height\\
 u_{des} & corresponding flow rate according to figure \ref{fig:loadcases}\\
 I_{tsu} & tsunami importance factor \\
 C_d & drag coefficient ratio based on table \ref{tab:dragcoeff} \\
@@ -183,7 +184,7 @@ C_{cx} & closure coefficient, refer to equation  \ref{eq:closurecoeff} \\
 \begin{longtable}{P{2in} P{2in}}
 \caption{Drag coefficient for rectangular structures. Source: \cite{sni172720} and \cite{asce}.}\\
 
-\headrow \thead{Ratio betweeen width and inundation depth, $B/h_{sx}$} & \thead{Drag Coefficient, $C_d$}  \\
+\headrow \thead{Ratio betweeen width and inundation depth, $B/h_{sx}$} & \thead{Drag coefficient, $C_d$}  \\
 $<12$ &$1.25$\\
 $16$ & $1.30$\\
 $26$ & $1.40$\\
@@ -193,6 +194,16 @@ $100$ & $1.80$\\
 $\geq 120$ & $2.00$\\
 \label{tab:dragcoeff}
 \end{longtable}
+
+The value of the closure coefficient can be assumed to be conservative at 1.0. This value can also be calculated from the ratio of the area of the building elements multiplied by certain factors compared to the total area which is the width multiplied by the inundation height. The formula is expressed mathematically as equation \ref{eq:closurecoeff}.
+
+\begin{equation}
+C_{cx}= \frac{\sum(A_{col}+A_{wall})+1.5 \times A_{beam}}{B \times h_{sx}}\label{eq:closurecoeff}
+\end{equation}
+
+The areas of the columns and walls are the vertical projections of the columns and walls. The area of the beam is the largest beam exposed to flow laterally. This sum is divided by the width of the entire wall, $B$, multiplied by the average story height, $h_{sx}$.  The closure coefficient, $C_{cx}$, taken need not be more than \num{1.00}.
+
+\subsubsection{Debris impact load}
 
 \section{Methodology}
 \label{sec:method}
