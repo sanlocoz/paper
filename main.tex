@@ -10,6 +10,7 @@
 \usepackage{tabularx}
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
+\setcounter{secnumdepth}{3}
 
 \tikzstyle{startstop} = [rectangle, rounded corners, 
 minimum width=3cm, 
@@ -272,6 +273,13 @@ Earthquake load are caused by ground movements that cause buildings to change su
 \end{figure}
 
 Earthquake load has been adopted in the SNI 1726:2019 standard. Maximum considered earhquake is probability of the value being exceeded in magnitude for 50 years by \SI{2}{\percent}. The considered earthquake has an effective return period of 2475 years. The method of response spectrum analysis for applying earthquake forces in accordance with SNI 1726:2019 are given in \ref{subsub: eqimportance} to \ref{subsub: appresponsespectrum}.
+
+\subsubsection{Determining earthquake importance factor}
+\label{subsub: eqimportance}
+Importance factor of the earthquake shows the relative importance of the building based on its function and use. Conceptually, it represents the expected building performance during and after an earthquake. The increase in base shear depends on the risk category of the building, where for risk category III it is increased by \SI{25}{\percent} and \SI{50}{\percent} for risk category IV which can be seen in table \ref{tab:prioreq} \citep{taranath}.
+
+\subsubsection{Response spectrum}
+\label{subsub: appresponsespectrum}
 
 \section{Methodology}
 \label{sec:method}
@@ -625,13 +633,6 @@ Nonlinear plastic hinges were compared to nonlinear models 3, 5 and 7. The resul
 \caption{This is a caption for the entire figure}
 \label{fig:twosubs}
 \end{figure}
-
-\begin{sidewaysfigure}
-\centering
-\includegraphics[width=19cm]{example-image}
-\caption{This is a figure caption}
-\label{fig:landscape}
-\end{sidewaysfigure}
 
 %\blinddocument
 
