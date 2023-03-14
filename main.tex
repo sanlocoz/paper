@@ -283,11 +283,25 @@ Importance factor of the earthquake shows the relative importance of the buildin
 \begin{longtable}{P{2in} P{2in}}
 \caption{Importance factor of earthquake. Source: \cite{sni172619}.}\\
 \headrow \thead{Risk category} & \thead{Earthquake importance factor, $I_e$}  \\
-$I or II$ &$1.00$\\
-$III$ & $1.25$\\
-$IV$ & $1.50$\\
+I or II &$1.00$\\
+III & $1.25$\\
+IV & $1.50$\\
 \label{tab:prioreq}
 \end{longtable}
+
+\subsubsection{Site classification}
+Site class is determined by the top 30 m (100 ft) of soil characteristics. Site classes are divided into several categories, including SA (hard rock), SB (rock), SC (hard, very dense soil and soft rock), SD (medium soil), SE (soft soil) and SF (special soil, which requires specific geotechnical investigations).
+
+\subsubsection{Earthquake parameter determination}
+Earthquake parameters are obtained according to the location of the structure. Parameters $S_s$ and $S_1$ indicate the parameters of the earthquake acceleration in the short period (0.2 seconds) and the 1-second period and are considered with a damping ratio of \SI{5}{\percent}. The value of this parameter can be seen in the attachment to SNI 1726:2019 or through the Puskim PUPR website or application for Indonesia region. This value will later become the basis for determining the base shear force of the earthquake. The typical earthquake response spectrum graphics for ASCE and SNI standards is given in figure \ref{fig:respspectra}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.6\textwidth]{fig2.png}
+\caption{Response spectrum according to ASCE 7-16 or SNI 1726:2019 \citep{taranath}.}
+\label{fig:respspectra}
+\end{figure}
+
 
 \subsubsection{Response spectrum}
 \label{subsub: appresponsespectrum}
