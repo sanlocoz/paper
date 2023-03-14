@@ -317,6 +317,51 @@ The structural system is selected for each building axis. Structures may be desi
 \label{fig:structural factors}
 \end{figure}
 
+\subsubsection{Calculation of structure period}
+The period of the structure is obtained from the structure analysis program with the upper limit $C_uT_a$ where $T_a$ is the approximate fundamental period and $C_u$ is the coefficient of the upper limit whose value depends on the design spectral response acceleration parameter of 1 second-period, $S_{D1}$, which are given in table \ref{tab:cu}. The approximate fundamental period can be calculated by equation \ref{eq:fundamentalperiod}.
+
+\begin{equation}
+T_{a} = C_t \times h_n^x
+\label{eq:fundamentalperiod}
+\end{equation}
+
+\noindent where:
+
+\begin{conditions*}
+h_n    &  structure height (m)\\
+C_t & coefficient defined in table \ref{tab:ctx} \\
+x & coefficient defined in table \ref{tab:ctx}
+\end{conditions*}
+
+\makeatletter
+\newcommand\footnoteref[1]{\protected@xdef\@thefnmark{\ref{#1}}\@footnotemark}
+\makeatother
+
+\renewcommand{\arraystretch}{1}
+\begin{longtable}{P{2.5in} P{1in} P{1in}}
+\caption{Value of approximate period parameter. Source: \cite{sni172720} and \cite{asce}.}\\
+\headrow \thead{Structure type} & \thead{$C_t$} & \thead{x} \\
+Steel moment-resisting frames \footnote{\label{foot:period}Moment-resisting frame systems that resist \SI{100}{\percent} loads and not adjoined with other structural components that will prevent the frames to be deflected when experiencing earthquakes.} &$0.028 (0.0724)$\footnote{\label{foot:metric} Metric values are given in parantheses.}  & $0.8$\\
+Concrete moment-resisting frames \footnoteref{foot:period} &$0.016 (0.0466)$\footnoteref{foot:metric}  & $0.9$\\
+Steel eccentricaly braced frames &$0.03 (0.0731)$\footnoteref{foot:metric}  & $0.75$\\
+Steel buckling-restrained braced frames &$0.03 (0.0731)$\footnoteref{foot:metric}  & $0.75$\\
+All other structural systems &$0.02 (0.0488)$\footnoteref{foot:metric}  & $0.75$\\
+\label{tab:ctx}
+\end{longtable}
+
+
+\renewcommand{\arraystretch}{1}
+\begin{longtable}{P{1in} P{1in}}
+\caption{Value of upper limit coefficient to calculate fundamental period. Source: \cite{sni172720} and \cite{asce}.}\\
+\headrow \thead{$S_{D1}$} & \thead{$C_u$}  \\
+$\geq 0.4$ & $1.4$ \\
+$0.3$ & $1.4$ \\
+$0.2$ & $1.5$ \\
+$0.15$ & $1.6$ \\
+$\leq 0.1$ & $1.7$ \\
+\label{tab:cu}
+\end{longtable}
+
 \subsubsection{Response spectrum}
 \label{subsub: appresponsespectrum}
 
