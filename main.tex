@@ -389,9 +389,7 @@ Research flowchart used in this study can be seen in figure \ref{fig: flowchart}
 
 The structure chosen was a 10-story office building with a base story height of 4 meters and typical floors of 3.5 meters. In both directions the span of the beam was 4 meters, there were 4 beams in the y direction and 8 beams in the x direction. Plan and elevation views are given in figure \ref{fig:plan} and \ref{fig:elevation} respectively.
 
-The building was designed as an office building which was a category II facility for earthquake loads and category III for tsunami loads. The masonry for the tsunami retained water calculations was at 90 cm above the floor slab. The highest elevation of the window is 120 cm above the masonry as shown in figure \ref{masonry}.
-
-%The criteria for building acceptance of the tsunami load to be used are in sub-chapter 3.8. The following are brief steps of the research to be carried out.
+The building was designed as an office building which was a category II facility for earthquake loads and category III for tsunami loads. The masonry for the tsunami retained water calculations was at 90 cm above the floor slab. The highest elevation of the window is 120 cm above the masonry as shown in figure \ref{fig:masonry}.
 
 \begin{figure}[H]
 \centering
@@ -435,8 +433,6 @@ The building was designed as an office building which was a category II facility
 \label{fig: flowchart}
 \end{figure}
 
-
-
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.6\textwidth]{fig4.png}
@@ -459,7 +455,39 @@ The building was designed as an office building which was a category II facility
 \label{fig:elevation}
 \end{figure}
 
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.35\textwidth]{fig7.png}
+\caption{Elevation of masonry and window \citep{rob}.}
+\label{fig:masonry}
+\end{figure}
 
+The concrete quality were in the range of 30-50 MPa. The concrete reinforcement yield strength was, $f_y$ = $400$ MPa. The building system was designed with special moment resisting frame system criteria which is considered economical for up to 25 floors \citep{taranath}. This also considers the reduction of the tsunami load due to removal of structural walls.
+
+The following were brief steps of the research that has been done:
+\begin{enumerate}
+\item{The building was designed to resist dead, live and earthquake loads.}
+\item{The building resulting from the initial design was loaded with varying tsunami loads and adjusted accordingly.}
+\item{The results of the first step of the building design were compared with the second step. The comparison includes deformation, internal forces and structural weight.}
+\end{enumerate}
+
+In the second step, the height of the tsunami varied from one to three floors, with an increment of one floor. Tsunamis were subjected perpendicular to the broad side of the building (The tsunami direction was parallel to Y axis in figure \ref{fig:plan}). Variations were made to the acceptance criteria for the structure, namely linear criteria and nonlinear criteria. These acceptance criteria were based on article 6.8.3.5 of SNI 1727:2020 which allows these two criteria to be selected as structural design guidelines. The variations in tsunami height and acceptance criteria were combined, thus there were 7 models that were analyzed which are summarized in table \ref{tab:model definition}.
+
+\renewcommand{\arraystretch}{1}
+\begin{longtable}{P{0.5in} P{1in} P{2in} P{1in} P{1in}}
+\caption{Model definition.}\\
+\headrow \thead{Model} & \thead{Tsunami height} & \thead{Tsunami load acceptance criteria} & \thead{Information} \\
+1 & -&-& control model \\
+2 & 1 floor&Linear analysis& - \\
+3 & 1 floor&Nonlinear analysis& - \\
+4 & 2 floors&Linear analysis& - \\
+5 & 2 floors&Nonlinear analysis& -\\
+6 & 3 floors&Linear analysis& -\\
+7 & 3 floors&Nonlinear analysis& - \\
+\label{tab:model definition}
+\end{longtable}
+
+This study used fixed variables in the form of material quality, structural topology (relationships between structural elements), and loading other than tsunami. The independent variables that varied were the tsunami loading and the acceptance criteria for the structure. Comparisons were made to the dependent variables, namely deformation, internal force and structural weight. 
 
 \section{Results and discussion}
 \label{sec:results}
@@ -682,14 +710,14 @@ The internal forces for the columns were taken in the case of component hydrodyn
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\textwidth]{Picture16_engels.png}
+\includegraphics[width=0.5\textwidth]{Picture16_engels.png}
 \caption{Maximum shear force for columns in each model.}
 \label{fig:maxshearcolumn}
 \end{figure}
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\textwidth]{Picture17_engels.png}
+\includegraphics[width=0.5\textwidth]{Picture17_engels.png}
 \caption{Maximum bending moment for columns in each model.}
 \label{fig:maxmomentcolumn}
 \end{figure}
@@ -698,7 +726,7 @@ For beams, the review was divided into two main sections which were the support 
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.6\textwidth]{Picture18_engels.png}
+\includegraphics[width=0.5\textwidth]{Picture18_engels.png}
 \caption{Final drift ratio for each tsunami model.}
 \label{fig:tsunamidrift}
 \end{figure}
