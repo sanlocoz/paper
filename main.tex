@@ -404,7 +404,7 @@ The structure chosen was a 10-story office building with a base story height of 
 \node (pro3) [process, below of=pro2] {Structural modeling};
 \node (pro4) [process, below of=pro3] {Design optimization};
 \node (pro5) [io, below of=pro4] {Tsunami load};
-\node (dec1) [decision, below of=pro5, yshift=-0.5cm] {Are the structure accepted?};
+\node (dec1) [decision, below of=pro5, yshift=-0.5cm] {Is the structure accepted?};
 
 %\node (pro2a) [process, below of=dec1, yshift=-0.5cm] {Process 2a
 %text text text text
@@ -435,20 +435,30 @@ The structure chosen was a 10-story office building with a base story height of 
 \end{figure}
 
 
+
 \begin{figure}[H]
-\begin{minipage}{0.47\textwidth}
-\includegraphics[width=\linewidth]{fig4.png}
-\subcaption{This is a subfigure}
+\centering
+\includegraphics[width=0.6\textwidth]{fig4.png}
+\caption{Plan view of structure used.}
+\label{fig:plan}
+\end{figure}
+
+\begin{figure}[H]
+\begin{minipage}{0.4\textwidth}
+\includegraphics[width=\linewidth]{fig5.png}
+\subcaption{YZ elevation view.}
 \end{minipage}
 \hfill
-\begin{minipage}{0.47\textwidth}
-\includegraphics[width=\linewidth]{fig5.png}
-\subcaption{This is another subfigure}
+\begin{minipage}{0.6\textwidth}
+\includegraphics[width=\linewidth]{fig6.png}
+\subcaption{XZ elevation view.}
 \end{minipage}
 
-\caption{This is a caption for the entire figure}
-\label{fig:twosubs}
+\caption{Elevation views of structure used.}
+\label{fig:elevation}
 \end{figure}
+
+
 
 \section{Results and discussion}
 \label{sec:results}
